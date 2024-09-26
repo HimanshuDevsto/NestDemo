@@ -1,0 +1,271 @@
+{
+	"info": {
+		"_postman_id": "1d7e8975-bcc7-454a-beee-9d829acd5b42",
+		"name": "Prectise",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "32080123"
+	},
+	"item": [
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\":\"Himanshu1\",\n    \"email\":\"himanshu1@gmail.com\",\n    \"contactNo\":\"5658956891\",\n    \"role\":\"Publisher\", //['Publisher', 'Advertiser', 'Admin']\n    \"password\": \"1234\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:5959/user/register"
+					},
+					"response": []
+				},
+				{
+					"name": "register-Form",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "email",
+									"value": "himanshu1@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "name",
+									"value": "Himanshu",
+									"type": "text"
+								},
+								{
+									"key": "contactNo",
+									"value": "5658956891",
+									"type": "text"
+								},
+								{
+									"key": "role",
+									"value": "Publisher",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "1234",
+									"type": "text"
+								}
+							]
+						},
+						"url": "http://localhost:5959/user/register"
+					},
+					"response": []
+				},
+				{
+					"name": "sendOTP",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"phone\":\"5658956891\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:5959/user/sendotp"
+					},
+					"response": []
+				},
+				{
+					"name": "verifyOTP",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"phone\":\"5658956891\",\n    \"otp\":\"873698\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:5959/user/verifyotp"
+					},
+					"response": []
+				},
+				{
+					"name": "setProfile",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {}
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "userId",
+									"value": "66f394f1d2c8aaa209d0c949",
+									"type": "text"
+								},
+								{
+									"key": "file",
+									"type": "file",
+									"src": "postman-cloud:///1ef12b98-e9d5-44e0-8e95-fb2a9ee884c9"
+								}
+							]
+						},
+						"url": "http://localhost:5959/user/setProfile"
+					},
+					"response": []
+				},
+				{
+					"name": "findUser",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {}
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": \"66f394f1d2c8aaa209d0c949\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:5959/user"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Resource",
+			"item": [
+				{
+					"name": "addResource",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"userid\": \"66f3969cfd6a1c23f2c0eb46\",\n    \"resourcesArr\": [\n        {\n            \"name\": \"Facebook\",\n            \"link\": \"prmbook@inta.com\"\n        },\n        {\n            \"name\": \"skype\",\n            \"link\": \"prmbook@inta.com\"\n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:5959/resource"
+					},
+					"response": []
+				},
+				{
+					"name": "getResource",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5959/resource?id=66f3969cfd6a1c23f2c0eb46",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5959",
+							"path": [
+								"resource"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "66f3969cfd6a1c23f2c0eb46"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Canvas",
+			"item": []
+		},
+		{
+			"name": "hello",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"phone\":\"5658956895\",\n    \"otp\":\"344154\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:5959/"
+			},
+			"response": []
+		},
+		{
+			"name": "files",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "images",
+							"type": "file",
+							"src": [
+								"postman-cloud:///1ef7bd07-8cd7-4700-9c54-d1d1baffc551",
+								"postman-cloud:///1ef7bd07-8bfe-4270-b2b5-1df97b1299f9",
+								"postman-cloud:///1ef7bd07-8431-4150-8d4d-348768965e82",
+								"postman-cloud:///1ef7bd07-87ee-41d0-8d74-6b5ad0e2cc08",
+								"postman-cloud:///1ef7bd07-8318-4520-a74f-15e6bb493bb9"
+							]
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:5959/upload",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5959",
+					"path": [
+						"upload"
+					],
+					"query": [
+						{
+							"key": "file",
+							"value": null,
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
